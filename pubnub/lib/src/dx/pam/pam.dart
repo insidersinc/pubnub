@@ -1,18 +1,16 @@
 import 'package:meta/meta.dart';
-
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 import 'package:pubnub/src/dx/_endpoints/pam.dart';
 import 'package:pubnub/src/dx/_utils/utils.dart';
-
-import 'token.dart';
-import 'token_request.dart';
-import 'extensions/keyset.dart';
+import 'package:pubnub/src/dx/pam/pam.dart';
 
 export 'package:pubnub/src/dx/_endpoints/pam.dart'
     show PamGrantResult, PamGrantTokenResult, PamRevokeTokenResult;
-export 'token.dart' show Token;
-export 'resource.dart' show Resource, ResourceType, ResourceTypeExtension;
+
 export 'extensions/keyset.dart' show PamKeysetExtension;
+export 'resource.dart' show Resource, ResourceType, ResourceTypeExtension;
+export 'token.dart' show Token;
 export 'token_request.dart' show TokenRequest;
 
 final _logger = injectLogger('pubnub.dx.pam');

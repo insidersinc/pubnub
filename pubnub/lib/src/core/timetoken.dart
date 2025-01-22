@@ -15,7 +15,7 @@ class Timetoken implements Result {
 
   /// Timetokens are compared based on their [value].
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     if (other is Timetoken) {
       return value == other.value;
     } else {

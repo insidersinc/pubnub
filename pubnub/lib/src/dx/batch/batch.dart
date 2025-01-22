@@ -1,8 +1,7 @@
 import 'package:pubnub/core.dart';
-import 'package:pubnub/src/default.dart';
-import 'package:pubnub/src/dx/_utils/utils.dart';
+import 'package:pubnub/pubnub.dart';
 import 'package:pubnub/src/dx/_endpoints/history.dart';
-import '../../../crypto.dart';
+import 'package:pubnub/src/dx/_utils/utils.dart';
 
 export 'package:pubnub/src/dx/_endpoints/history.dart'
     show BatchHistoryResult, BatchHistoryResultEntry, CountMessagesResult;
@@ -29,7 +28,6 @@ class BatchDx {
       bool? includeMeta,
       bool includeMessageActions = false,
       bool includeMessageType = true,
-      bool includeCustomMessageType = false,
       bool includeUUID = true}) async {
     keyset ??= _core.keysets[using];
 
@@ -54,7 +52,6 @@ class BatchDx {
         includeMeta: includeMeta,
         includeMessageActions: includeMessageActions,
         includeMessageType: includeMessageType,
-        includeCustomMessageType: includeCustomMessageType,
         includeUUID: includeUUID);
 
     return defaultFlow<BatchHistoryParams, BatchHistoryResult>(

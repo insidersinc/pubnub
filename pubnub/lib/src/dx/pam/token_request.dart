@@ -1,11 +1,9 @@
 import 'dart:convert';
 
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 import 'package:pubnub/src/dx/_endpoints/pam.dart';
 import 'package:pubnub/src/dx/_utils/utils.dart';
-
-import 'resource.dart';
-import 'token.dart';
 
 /// Represents a token request.
 ///

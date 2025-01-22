@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:pubnub/core.dart';
 
 class HostIsDownDiagnostic extends Diagnostic {

@@ -1,7 +1,8 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import '../_utils/utils.dart';
 import '../_endpoints/presence.dart';
+import '../_utils/utils.dart';
 
 export '../_endpoints/presence.dart';
 

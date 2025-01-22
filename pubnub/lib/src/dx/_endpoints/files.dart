@@ -74,11 +74,9 @@ class PublishFileMessageParams extends Parameters {
   bool? storeMessage;
   int? ttl;
   String? meta;
-  String? customMessageType;
 
   PublishFileMessageParams(this.keyset, this.channel, this.message,
-      {this.storeMessage, this.meta, this.ttl, this.customMessageType});
-
+      {this.storeMessage, this.meta, this.ttl});
   @override
   Request toRequest() {
     var pathSegments = [
@@ -100,8 +98,7 @@ class PublishFileMessageParams extends Parameters {
         'store': '0',
       'uuid': keyset.uuid.value,
       if (ttl != null) 'ttl': ttl.toString(),
-      if (meta != null) 'meta': meta,
-      if (customMessageType != null) 'custom_message_type': customMessageType,
+      if (meta != null) 'meta': meta
     };
     return Request.get(
         uri: Uri(pathSegments: pathSegments, queryParameters: queryParameters));

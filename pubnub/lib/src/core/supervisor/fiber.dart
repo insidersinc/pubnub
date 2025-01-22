@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'package:pedantic/pedantic.dart';
 
-import '../logging/logging.dart';
 import '../core.dart';
+import '../logging/logging.dart';
 import 'event.dart';
 import 'resolution.dart';
 

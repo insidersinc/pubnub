@@ -3,7 +3,7 @@
 /// Uses `package:crypto` and `package:encrypt` under the hood.
 ///
 /// {@category Modules}
-library pubnub.crypto;
+//library pubnub.crypto;
 
 export 'src/crypto/crypto.dart' show CryptoModule;
 export 'src/crypto/encryption_mode.dart'

@@ -1,9 +1,5 @@
 import 'package:pubnub/core.dart';
-
-import 'package:pubnub/src/dx/_endpoints/objects/channel_metadata.dart'
-    show ChannelMetadataDetails;
-import 'package:pubnub/src/dx/_endpoints/objects/uuid_metadata.dart'
-    show UuidMetadataDetails;
+import 'package:pubnub/pubnub.dart';
 
 class GetMembershipsMetadataParams extends Parameters {
   Keyset keyset;

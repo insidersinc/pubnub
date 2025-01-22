@@ -1,7 +1,7 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
 import 'manager.dart';
-import 'subscription.dart';
 
 mixin SubscribeDx on Core {
   final Map<Keyset, Manager> _managers = {};

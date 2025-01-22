@@ -1,10 +1,4 @@
-import 'package:pubnub/core.dart';
-import 'package:pubnub/src/default.dart';
-
-import '../_endpoints/presence.dart';
-import '../_endpoints/publish.dart';
-import '../_endpoints/message_action.dart';
-import 'channel_history.dart';
+import 'package:pubnub/pubnub.dart';
 
 export 'channel_history.dart'
     show PaginatedChannelHistory, ChannelHistory, ChannelHistoryOrder;
@@ -41,18 +35,13 @@ class Channel {
   /// If set to `0`, message won't expire.
   /// If unset, expiration will fall back to default.
   Future<PublishResult> publish(dynamic message,
-      {bool? storeMessage,
-      int? ttl,
-      dynamic meta,
-      bool? fire,
-      String? customMessageType}) {
+      {bool? storeMessage, int? ttl, dynamic meta, bool? fire}) {
     return _core.publish(name, message,
         storeMessage: storeMessage,
         ttl: ttl,
         keyset: _keyset,
         meta: meta,
-        fire: fire,
-        customMessageType: customMessageType);
+        fire: fire);
   }
 
   /// Returns [PaginatedChannelHistory]. Most useful in infinite list type scenario.

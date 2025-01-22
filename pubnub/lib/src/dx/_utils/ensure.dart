@@ -1,4 +1,4 @@
-import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
 final _invariantMessages = {
   'not-null': (String that, _) => '$that cannot be null',

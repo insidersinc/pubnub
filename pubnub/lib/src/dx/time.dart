@@ -1,7 +1,7 @@
 import 'package:pubnub/core.dart';
 
-import './_utils/utils.dart';
 import './_endpoints/time.dart';
+import './_utils/utils.dart';
 
 mixin TimeDx on Core {
   /// Get current timetoken value from the PubNub network.

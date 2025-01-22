@@ -1,26 +1,24 @@
 import 'package:pubnub/src/crypto/legacyCryptor.dart';
 
 import '../core.dart';
-
-import 'networking/networking.dart';
-import 'parser/parser.dart';
 import 'crypto/crypto.dart';
-import 'subscribe/subscribe.dart';
-
-import 'dx/time.dart';
-import 'dx/publish/publish.dart';
-import 'dx/signal/signal.dart';
 import 'dx/batch/batch.dart';
 import 'dx/channel/channel.dart';
 import 'dx/channel/channel_group.dart';
-import 'dx/message_action/message_action.dart';
-import 'dx/pam/pam.dart';
-import 'dx/push/push.dart';
-import 'dx/presence/presence.dart';
 import 'dx/files/files.dart';
-import 'dx/objects/objects_types.dart';
+import 'dx/message_action/message_action.dart';
 import 'dx/objects/objects.dart';
+import 'dx/objects/objects_types.dart';
+import 'dx/pam/pam.dart';
+import 'dx/presence/presence.dart';
+import 'dx/publish/publish.dart';
+import 'dx/push/push.dart';
+import 'dx/signal/signal.dart';
 import 'dx/supervisor/supervisor.dart';
+import 'dx/time.dart';
+import 'networking/networking.dart';
+import 'parser/parser.dart';
+import 'subscribe/subscribe.dart';
 
 /// PubNub library.
 ///

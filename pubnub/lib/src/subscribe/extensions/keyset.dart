@@ -1,4 +1,4 @@
-import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
 /// @nodoc
 extension SubscribeKeysetExtension on Keyset {

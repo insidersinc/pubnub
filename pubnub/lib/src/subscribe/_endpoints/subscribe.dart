@@ -1,8 +1,7 @@
 import 'package:pubnub/core.dart';
-import 'package:pubnub/src/dx/_utils/utils.dart';
-import 'package:pubnub/src/dx/pam/extensions/keyset.dart';
-
-import '../extensions/keyset.dart';
+import 'package:pubnub/pubnub.dart';
+import 'package:pubnub/src/dx/_utils/signature.dart';
+import 'package:pubnub/src/dx/_utils/time.dart';
 
 class SubscribeParams extends Parameters {
   Keyset keyset;

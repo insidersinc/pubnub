@@ -36,13 +36,12 @@ class LinearRetryPolicy extends RetryPolicy {
   const LinearRetryPolicy({int? backoff, int? maxRetries, int? maximumDelay})
       : backoff = backoff ?? 5,
         maximumDelay = maximumDelay ?? 60000,
-        super(maxRetries ?? 10);
+        super(maxRetries ?? 5);
 
   @override
   Duration getDelay(Fiber fiber) {
     return Duration(
-        milliseconds: min(
-            maximumDelay, (fiber.tries * backoff) + Random().nextInt(1000)));
+        milliseconds: (fiber.tries * backoff) + Random().nextInt(1000));
   }
 }
 
@@ -54,8 +53,8 @@ class ExponentialRetryPolicy extends RetryPolicy {
   final int maximumDelay;
 
   const ExponentialRetryPolicy({int? maxRetries, int? maximumDelay})
-      : maximumDelay = maximumDelay ?? 150000,
-        super(maxRetries ?? 6);
+      : maximumDelay = maximumDelay ?? 60000,
+        super(maxRetries ?? 5);
 
   @override
   Duration getDelay(Fiber fiber) {

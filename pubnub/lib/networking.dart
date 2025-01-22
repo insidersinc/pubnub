@@ -3,6 +3,6 @@
 /// Uses `package:dio` under the hood.
 ///
 /// {@category Modules}
-library pubnub.networking;
+//library pubnub.networking;
 
 export 'src/networking/networking.dart' show NetworkingModule;

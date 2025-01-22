@@ -1,6 +1,6 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 import 'package:pubnub/src/dx/_utils/utils.dart';
-import 'package:pubnub/src/dx/pam/extensions/keyset.dart';
 
 typedef Serialize<R> = R Function(dynamic object,
     [Map<String, List<String>>? headers]);

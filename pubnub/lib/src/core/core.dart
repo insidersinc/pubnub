@@ -1,9 +1,9 @@
+import 'crypto/crypto.dart';
+import 'keyset/keyset.dart';
+import 'keyset/store.dart';
 import 'net/net.dart';
 import 'parser.dart';
-import 'crypto/crypto.dart';
 import 'supervisor/supervisor.dart';
-import 'keyset/store.dart';
-import 'keyset/keyset.dart';
 
 class Core {
   /// Allows to have multiple [Keyset] associated with one instance.
@@ -21,7 +21,7 @@ class Core {
   /// Internal module responsible for supervising.
   SupervisorModule supervisor = SupervisorModule();
 
-  static String version = '5.1.1';
+  static String version = '4.3.2';
 
   Core(
       {Keyset? defaultKeyset,

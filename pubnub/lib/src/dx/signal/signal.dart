@@ -1,20 +1,20 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import '../_utils/utils.dart';
 import '../_endpoints/signal.dart';
+import '../_utils/utils.dart';
 
 export '../_endpoints/signal.dart';
 
 mixin SignalDx on Core {
   /// Publishes signal [message] to a [channel].
   Future<SignalResult> signal(String channel, dynamic message,
-      {String? customMessageType, Keyset? keyset, String? using}) async {
+      {Keyset? keyset, String? using}) async {
     keyset ??= keysets[using];
     Ensure(keyset.publishKey).isNotNull('publishKey');
 
     var payload = await super.parser.encode(message);
-    var params = SignalParams(keyset, channel, payload,
-        customMessageType: customMessageType);
+    var params = SignalParams(keyset, channel, payload);
 
     return defaultFlow(
         keyset: keyset,

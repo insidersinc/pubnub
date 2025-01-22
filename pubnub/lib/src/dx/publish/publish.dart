@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import '../../../crypto.dart';
-import '../_utils/utils.dart';
 import '../_endpoints/publish.dart';
+import '../_utils/utils.dart';
 
 export '../_endpoints/publish.dart';
 
@@ -42,8 +42,7 @@ mixin PublishDx on Core {
       Map<String, dynamic>? meta,
       bool? storeMessage,
       int? ttl,
-      bool? fire,
-      String? customMessageType}) async {
+      bool? fire}) async {
     Ensure(channel).isNotEmpty('channel name');
     Ensure(message).isNotNull('message');
 
@@ -62,9 +61,7 @@ mixin PublishDx on Core {
     }
 
     var params = PublishParams(keyset, channel, payload,
-        storeMessage: storeMessage,
-        ttl: ttl,
-        customMessageType: customMessageType);
+        storeMessage: storeMessage, ttl: ttl);
 
     if (meta != null) {
       params.meta = await super.parser.encode(meta);

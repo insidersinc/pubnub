@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
 import 'manager.dart';
-import 'envelope.dart';
 
 final _logger = injectLogger('pubnub.subscription.subscription');
 
@@ -62,10 +62,9 @@ class Subscription {
   /// Will only emit when [withPresence] is true.
   Stream<PresenceEvent> get presence => _envelopesController.stream
       .where((envelope) =>
-          envelope.userMeta != null &&
-          (presenceChannels.contains(envelope.channel) ||
-              presenceChannels.contains(envelope.subscriptionPattern) ||
-              presenceChannelGroups.contains(envelope.subscriptionPattern)))
+          presenceChannels.contains(envelope.channel) ||
+          presenceChannels.contains(envelope.subscriptionPattern) ||
+          presenceChannelGroups.contains(envelope.subscriptionPattern))
       .map<PresenceEvent>((envelope) => PresenceEvent.fromEnvelope(envelope));
 
   final Completer<void> _cancelCompleter = Completer();

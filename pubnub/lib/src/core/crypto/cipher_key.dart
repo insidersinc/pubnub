@@ -1,4 +1,5 @@
 import 'dart:convert' show base64, utf8;
+
 import 'package:convert/convert.dart' show hex;
 
 class CipherKey {
@@ -23,9 +24,12 @@ class CipherKey {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
+    if (other == null) {
+      return false;
+    }
     if (runtimeType == other.runtimeType) {
-      return utf8.decode(data) == utf8.decode((other as CipherKey).data);
+      return utf8.decode(data) == utf8.decode(other!.data);
     }
     return false;
   }

@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:xml/xml.dart' show XmlDocument;
 
 import 'package:pubnub/core.dart';
+import 'package:xml/xml.dart' show XmlDocument;
 
 /// @nodoc
 abstract class Parser<T> {

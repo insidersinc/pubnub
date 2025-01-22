@@ -1,4 +1,6 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
+
 import '../_utils/utils.dart';
 
 /// Push gateway type.
@@ -52,18 +54,9 @@ class ListPushChannelsParams extends Parameters {
   PushGateway pushGateway;
   Environment? environment;
   String? topic;
-  String? start;
-  int? count;
 
-  ListPushChannelsParams(
-    this.keyset,
-    this.deviceId,
-    this.pushGateway, {
-    this.topic,
-    this.environment,
-    this.start,
-    this.count,
-  });
+  ListPushChannelsParams(this.keyset, this.deviceId, this.pushGateway,
+      {this.topic, this.environment});
 
   @override
   Request toRequest() {
@@ -79,9 +72,7 @@ class ListPushChannelsParams extends Parameters {
     var queryParameters = {
       if (keyset.authKey != null) 'auth': '${keyset.authKey}',
       'uuid': '${keyset.uuid}',
-      'type': pushGateway.value(),
-      if (start != null && start!.isNotEmpty) 'start': start!,
-      if (count != null) 'count': '$count'
+      'type': pushGateway.value()
     };
     if (pushGateway == PushGateway.apns2) {
       queryParameters['environment'] =

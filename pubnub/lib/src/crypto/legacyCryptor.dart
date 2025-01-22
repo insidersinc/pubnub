@@ -1,13 +1,12 @@
-import 'package:pubnub/core.dart';
-
-import 'package:encrypt/encrypt.dart' as crypto;
-import 'package:crypto/crypto.dart' show sha256;
 import 'dart:convert' show base64;
 import 'dart:typed_data' show Uint8List;
 
-import 'cryptoConfiguration.dart';
+import 'package:crypto/crypto.dart' show sha256;
+import 'package:encrypt/encrypt.dart' as crypto;
+import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
+
 import 'encryption_mode.dart';
-import 'crypto.dart';
 
 /// Legacy cryptor exists so that SDK will be able to decrypt old contents
 /// Which encrypted in past

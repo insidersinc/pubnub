@@ -12,7 +12,6 @@ class Envelope extends BaseMessage {
   final MessageType messageType;
   final int flags;
   final UUID uuid;
-  final String? customMessageType;
 
   final Timetoken? originalTimetoken;
   final int? originalRegion;
@@ -38,7 +37,6 @@ class Envelope extends BaseMessage {
       required this.originalRegion,
       required this.region,
       required this.userMeta,
-      required this.customMessageType,
       this.error})
       : super(
             content: content,
@@ -57,7 +55,6 @@ class Envelope extends BaseMessage {
       messageType: MessageTypeExtension.fromInt(object['e']),
       flags: object['f'] as int,
       uuid: UUID(object['i'] ?? ''),
-      customMessageType: object['cmt'] as String?,
       originalTimetoken: object['o'] != null
           ? Timetoken(BigInt.parse('${object['o']['t']}'))
           : null,

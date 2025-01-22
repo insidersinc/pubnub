@@ -1,7 +1,7 @@
-import 'package:encrypt/encrypt.dart' as crypto;
-import 'package:crypto/crypto.dart' show sha256;
 import 'dart:typed_data' show Uint8List;
 
+import 'package:crypto/crypto.dart' show sha256;
+import 'package:encrypt/encrypt.dart' as crypto;
 import 'package:pubnub/core.dart';
 
 /// AesCbcCryptor is new and enhanced cryptor to encrypt/decrypt

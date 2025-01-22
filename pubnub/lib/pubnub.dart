@@ -2,7 +2,7 @@
 /// PubNub Data Streaming Network in a fast and easy manner.
 ///
 /// The best starting point to take a look around is the [PubNub] class that combines all available features.
-library pubnub;
+//library pubnub;
 
 // PubNub
 export 'src/default.dart';

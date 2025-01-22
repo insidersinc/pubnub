@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import 'subscribe_loop/subscribe_loop_state.dart';
 import 'subscribe_loop/subscribe_loop.dart';
-import 'subscription.dart';
-import 'envelope.dart';
+import 'subscribe_loop/subscribe_loop_state.dart';
 
 /// @nodoc
 class Manager {

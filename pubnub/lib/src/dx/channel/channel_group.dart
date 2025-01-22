@@ -1,7 +1,8 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import '../_utils/utils.dart';
 import '../_endpoints/channel_group.dart';
+import '../_utils/utils.dart';
 
 export '../_endpoints/channel_group.dart';
 

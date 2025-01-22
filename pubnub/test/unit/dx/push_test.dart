@@ -1,8 +1,8 @@
+import 'package:pubnub/pubnub.dart';
 import 'package:test/test.dart';
 
-import 'package:pubnub/pubnub.dart';
-
 import '../net/fake_net.dart';
+
 part './fixtures/push.dart';
 
 void main() {
@@ -199,8 +199,6 @@ void main() {
         await fakePubnub.listPushChannels(
           'A332C23D',
           PushGateway.mpns,
-          start: 'ch2',
-          count: 10,
         );
 
         var invocation = fakePubnub.invocations[0];

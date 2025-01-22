@@ -11,7 +11,7 @@ class UUID {
   String toString() => '$value';
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     if (other is UUID) {
       return value == other.value;
     }

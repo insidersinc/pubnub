@@ -1,5 +1,5 @@
 /// @nodoc
-library pubnub.core;
+//library pubnub.core;
 
 export 'src/core/core.dart';
 

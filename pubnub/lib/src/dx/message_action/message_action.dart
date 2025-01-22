@@ -1,7 +1,8 @@
 import 'package:pubnub/core.dart';
+import 'package:pubnub/pubnub.dart';
 
-import '../_utils/utils.dart';
 import '../_endpoints/message_action.dart';
+import '../_utils/utils.dart';
 
 export '../_endpoints/message_action.dart'
     show

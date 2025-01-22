@@ -1,6 +1,6 @@
-import '../uuid.dart';
-import '../user_id.dart';
 import '../crypto/cipher_key.dart';
+import '../user_id.dart';
+import '../uuid.dart';
 
 /// Represents a configuration for a given subscribe key.
 ///

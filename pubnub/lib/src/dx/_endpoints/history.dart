@@ -88,7 +88,6 @@ class BatchHistoryParams extends Parameters {
   bool? includeMessageActions;
   bool? includeUUID;
   bool? includeMessageType;
-  bool? includeCustomMessageType;
 
   BatchHistoryParams(this.keyset, this.channels,
       {this.max,
@@ -98,7 +97,6 @@ class BatchHistoryParams extends Parameters {
       this.includeMeta,
       this.includeMessageActions,
       this.includeMessageType,
-      this.includeCustomMessageType,
       this.includeUUID})
       : assert(channels.isNotEmpty);
 
@@ -121,8 +119,6 @@ class BatchHistoryParams extends Parameters {
       if (includeMeta != null) 'include_meta': '$includeMeta',
       if (includeMessageType != null)
         'include_message_type': '$includeMessageType',
-      if (includeCustomMessageType != null)
-        'include_custom_message_type': '$includeCustomMessageType',
       if (includeUUID != null) 'include_uuid': '$includeUUID',
       if (keyset.authKey != null) 'auth': '${keyset.authKey}',
       'uuid': '${keyset.uuid}'
@@ -162,19 +158,8 @@ class BatchHistoryResultEntry {
   /// for given `message`.
   PubNubException? error;
 
-  /// If message has customMessageType, this will contain it.
-  /// Otherwise, it will be `null`.
-  String? customMessageType;
-
-  BatchHistoryResultEntry._(
-      this.message,
-      this.timetoken,
-      this.uuid,
-      this.messageType,
-      this.actions,
-      this.meta,
-      this.error,
-      this.customMessageType);
+  BatchHistoryResultEntry._(this.message, this.timetoken, this.uuid,
+      this.messageType, this.actions, this.meta, this.error);
 
   /// @nodoc
   factory BatchHistoryResultEntry.fromJson(Map<String, dynamic> object,
@@ -210,8 +195,7 @@ class BatchHistoryResultEntry {
         MessageTypeExtension.fromInt(object['message_type']),
         object['actions'],
         object['meta'] == '' ? null : object['meta'],
-        error,
-        object['custom_message_type']);
+        error);
   }
 }
 

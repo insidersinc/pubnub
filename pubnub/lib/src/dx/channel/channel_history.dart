@@ -1,12 +1,9 @@
 import 'dart:convert';
 
 import 'package:pubnub/core.dart';
-import 'package:pubnub/src/default.dart';
-import 'package:pubnub/src/dx/_utils/utils.dart';
+import 'package:pubnub/pubnub.dart';
 import 'package:pubnub/src/dx/_endpoints/history.dart';
-
-import '../../../crypto.dart';
-import 'channel.dart';
+import 'package:pubnub/src/dx/_utils/utils.dart';
 
 /// Order of messages based on timetoken.
 enum ChannelHistoryOrder { ascending, descending }
